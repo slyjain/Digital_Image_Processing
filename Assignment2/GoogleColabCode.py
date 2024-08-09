@@ -1,10 +1,10 @@
 import cv2
 
-from google.colab.patches import cv2_imshow
+# from google.colab.patches import cv2_imshow
 from matplotlib import pyplot as plt
 # Read the image from the specified path
-img = cv2.imread('/content/IMG_1496.jpg')
-cv2_imshow(img)
+img = cv2.imread('Sonam.png')
+cv2.imshow(img)
 img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 cv2_imshow(img)
 
