@@ -13,7 +13,7 @@ def createTambolaRow(n):
             count += 1
     return hashArray
 for i in range(3):
-  tambola[i]=createTambolaRow(9);
+  tambola[i]=createTambolaRow(9)
   
 def hashArrayGenerator():
     all_hash_arrays = []
@@ -27,12 +27,25 @@ def hashArrayGenerator():
                 count += 1
         all_hash_arrays.append(hashArray)
     return all_hash_arrays
-hashArray=hashArrayGenerator();
-for i in range(9):
-  k=0
-  for j in range(10):
-      if hashArray[i][j]==1:
-        tambola[k][i]=(i*10+j+1)*tambola[k][i];
-        k+=1;
+
+hashArray=hashArrayGenerator()
+def createTambola(hashArray):
+   
+    for i in range(9):
+      k=0
+      for j in range(10):
+          if hashArray[i][j]==1:
+            tambola[k][i]=(i*10+j+1)*tambola[k][i]
+            k+=1
+    return tambola        
+tambola=createTambola(hashArray)
+
 print(tambola)
+for i in range(3):
+    for j in range(9):
+        if tambola[i][j]!=0:
+            print("|",tambola[i][j],end="")
+        else:
+            print("| |",end="")
+    print()
 
