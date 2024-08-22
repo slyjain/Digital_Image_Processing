@@ -1,6 +1,7 @@
 
 import random
 import numpy as np
+from tabulate import tabulate
 tambola = np.zeros((3, 9))
 
 def createTambolaRow(n):
@@ -40,12 +41,5 @@ def createTambola(hashArray):
     return tambola        
 tambola=createTambola(hashArray)
 
-print(tambola)
-for i in range(3):
-    for j in range(9):
-        if tambola[i][j]!=0:
-            print("|",tambola[i][j],end="")
-        else:
-            print("| |",end="")
-    print()
+print(tabulate(tambola,tablefmt="fancy_grid"))
 
